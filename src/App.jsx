@@ -1,21 +1,36 @@
 import React, { useState, useEffect } from 'react'
 
+import Button from './Components/Button/Button'
+
+import Table from './Components/Table/Table'
+
+import './App.scss'
+
 const App = () => {
 
-const [standings, setStandings] = useState(null)
+const [standings, changeStandings] = useState(null)
+const [fetchStandings, setFetchStandings] = useState(true);
 
 useEffect( () => {
   fetch('http://api-football-standings.azharimm.site/leagues/eng.1/standings')
     .then (res => res.json())
-   // .then (data => setStandings(data))
-   .then (data => console.log(data.data.standings[0].team.name) )
+    .then (data => changeStandings(data.data.standings))
     .catch (err => console.log(err))
-}, [standings]);
+}, [fetchStandings]);
+
+
+const handleClick = (event => {
+  setFetchStandings( !fetchStandings )
+})
 
   return (
-    <div>
-      
-    </div>
+    <>
+      <Button buttonText={"View latest English Premier League Standings"} onClick={handleClick}/>
+      <div>
+      { standings && <Table teamData={standings} />  }
+      </div>
+     
+    </>
   )
 }
 
