@@ -2,12 +2,14 @@
 
 import React from 'react'
 
+import '../Table/Table.scss'
+
 const TableHeader = () => {
     return (
-            <thead>
+            <thead class="table__header">
                  <tr>
-                     <th></th>
-                     <th></th>
+                     <th>Team</th>
+                     <th>Logo</th>
                      <th>MP</th>
                       <th>W</th>  
                       <th>D</th>
@@ -33,8 +35,10 @@ const TableBody = (props) => {
 
         return (
        <> 
-        <tr >
+        <tr class="table__row">
+            
               <td>{row.team.displayName}</td>
+              <td></td>
               <td>{row.stats[3].value}</td>
               <td>{row.stats[0].value}</td>
               <td>{row.stats[2].value}</td>

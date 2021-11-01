@@ -1,1 +1,18 @@
 
+.button {
+    background-color: white;
+    color: purple;
+    height: 40px;
+    font-size: larger;
+    font-weight: bolder;
+    margin-bottom: 3em;
+    margin-left: 1em;
+    margin-top: 1em;
+    border: 1px solid purple;
+}
+
+.button:hover {
+    background-color: purple; 
+    color: white;  
+
+}

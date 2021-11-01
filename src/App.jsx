@@ -6,6 +6,8 @@ import Table from './Components/Table/Table'
 
 import './App.scss'
 
+import './Components/Table/Table.scss'
+
 const App = () => {
 
 const [standings, changeStandings] = useState(null)
@@ -25,9 +27,10 @@ const handleClick = (event => {
 
   return (
     <>
-      <Button buttonText={"View latest English Premier League Standings"} onClick={handleClick}/>
+       <Button className="button" buttonText={"View latest English Premier League Standings"} onClick={handleClick}/>
+      <h1>Tables</h1>
       <div>
-      { standings && <Table teamData={standings} />  }
+      { standings && <Table className="table" teamData={standings} />  }
       </div>
      
     </>
