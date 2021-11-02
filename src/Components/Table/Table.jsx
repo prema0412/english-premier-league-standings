@@ -4,12 +4,15 @@ import React from 'react'
 
 import '../Table/Table.scss'
 
+
+
 const TableHeader = () => {
     return (
-            <thead class="table__header">
+            <thead className="table__header">
                  <tr>
-                     <th>Team</th>
-                     <th>Logo</th>
+                     <th>Club</th>
+                     <th></th>
+                     <th></th>
                      <th>MP</th>
                       <th>W</th>  
                       <th>D</th>
@@ -31,14 +34,42 @@ const TableBody = (props) => {
 
     const rows = teamData.map( (row, index) => {
 
+        let highlight = ""
+
+         if (index >=0 && index<=3) {
+
+            highlight = "champion"
+            
+        } else 
+
+        if (index === 4) {
+
+            highlight = "europa"
+        } else
+
+
+        if (index >=17 && index<=20) {
+
+            highlight = "relegation"
+            
+        } else
+
+        {
+            highlight = "normal"
+        }
+
         let gd = parseFloat(row.stats[4].value) - parseFloat(row.stats[5].value)
+        let logo = (row.team.logos[0].href)
 
         return (
        <> 
-        <tr class="table__row">
+        <tr className="table__row">
             
-              <td>{row.team.displayName}</td>
-              <td></td>
+              <td className={highlight} >{index+1}
+              
+              </td>
+              <td><img className="logo" src={logo} alt=""></img></td>
+              <td className="team-name">{row.team.displayName}</td>
               <td>{row.stats[3].value}</td>
               <td>{row.stats[0].value}</td>
               <td>{row.stats[2].value}</td>
@@ -61,13 +92,9 @@ const TableBody = (props) => {
 
 const Table = (props) => {
 
-    console.log(props);
-
     const { teamData } = props;
-
-    console.log(teamData);
     return (
-        <table>
+        <table className="table">
             <TableHeader />
             <TableBody teamData={teamData}/>
         </table>

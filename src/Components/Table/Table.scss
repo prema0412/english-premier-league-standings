@@ -1,26 +1,48 @@
 
+.logo {
+    width: 40px;
+    height: 40px;
+    padding: 4px;
+}
+
+.team-name {
+    width: 350px;
+    text-align: left;
+}
 
 .table{
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     font-weight: bolder;
-    font-size: large;
-    width: 100%;
+    font-size: 15px;
+    width: 80%;
+    background-color: #3D195B;
+    color: white;
+    margin-left: 3em;
    
     
 }
 
-td {
-    border: 1px solid purple;
-    padding: 10px;
-    color: purple;
-    border-spacing: 1.5em;
+th {
+    text-align: center;
+   // border-spacing: .1em;
+    text-align: left;
 }
 
-th {
-    border: 1px solid purple;
-    padding: 12px;
-    text-align: center;
-    background-color: purple;
-    color: white;
-    border-spacing: 1.5em;
+.normal {
+    width: 80px;
+}
+
+.champion {
+    width: 80px;
+    background-color: blue;
+}
+
+.europa {
+    width: 80px;
+    background-color: darkorange;
+}
+
+.relegation {
+    width: 80px;
+    background-color: red;
 }
