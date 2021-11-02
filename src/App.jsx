@@ -30,9 +30,9 @@ useEffect( () => {
 
 const handleClick = ( (event) => {
   console.log(fetchStandings);
-  setFetchStandings( !fetchStandings )
+  setFetchStandings(!fetchStandings);
   console.log(fetchStandings);
-})
+});
 
   return (
     <>
