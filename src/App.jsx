@@ -15,10 +15,8 @@ import legends from './Assets/images/legends.png'
 const App = () => {
 
 const [standings, changeStandings] = useState(null)
-const [fetchStandings, setFetchStandings] = useState(true);
+const [fetchStandings, setFetchStandings] = useState(false);
 
-
-console.log(fetchStandings);
 
 useEffect( () => {
   fetch('http://api-football-standings.azharimm.site/leagues/eng.1/standings')
@@ -29,14 +27,12 @@ useEffect( () => {
 
 
 const handleClick = ( (event) => {
-  console.log(fetchStandings);
   setFetchStandings(!fetchStandings);
-  console.log(fetchStandings);
 });
 
   return (
     <>
-      <Button className="button" buttonText={"View Latest English Premier League Standings"} onClick={handleClick}/>
+      <Button className="button" buttonText={"EPL Standings"} onClick={handleClick}/>
      
       { standings && <Table className="table" teamData={standings} />  }
 
