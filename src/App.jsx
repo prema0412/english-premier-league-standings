@@ -19,7 +19,7 @@ const [fetchStandings, setFetchStandings] = useState(false);
 
 
 useEffect( () => {
-  fetch('http://api-football-standings.azharimm.site/leagues/eng.1/standings')
+  fetch('https://api-football-standings.azharimm.site/leagues/eng.1/standings')
     .then (res => res.json())
     .then (data => changeStandings(data.data.standings))
     .catch (err => console.log(err))
